@@ -5,9 +5,9 @@ on:
     tags:
       - 'release-*'
 
-steps:
-  - name: run this
-  id: step_one
-  run: |
-      echo "Current branch = ${{github.event.base_ref}}"
-  
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+            echo "Current branch = ${{github.event.base_ref}}"
