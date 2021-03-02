@@ -2,8 +2,8 @@ name: on_label_test
 
 on:
   push:
-    branches:
-      - refs/tags/@release-/*
+    tags:
+      - 'release-*'
 
 jobs:
   check-bats-version:
