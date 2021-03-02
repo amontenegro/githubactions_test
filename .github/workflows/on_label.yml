@@ -1,4 +1,4 @@
-name: on_label_test
+name: release_tag_on_development_branch
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   check-bats-version:
-    if: github.event.base_ref == 'refs/heads/development'
+    if: startsWith(github.event.base_ref, 'refs/heads/release')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
