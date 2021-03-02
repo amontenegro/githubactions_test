@@ -6,6 +6,9 @@ on:
       - 'release-*'
 
 jobs:
+  echo-name:
+    steps:
+      - echo "Current branch = ${{github.event.base_ref}}"
   check-bats-version:
     if: startsWith(github.event.base_ref, 'refs/heads/release')
     runs-on: ubuntu-latest
