@@ -5,15 +5,9 @@ on:
     tags:
       - 'release-*'
 
-jobs:
-  echo-name:
-    steps:
-      - echo "Current branch = ${{github.event.base_ref}}"
-  check-bats-version:
-    if: startsWith(github.event.base_ref, 'refs/heads/release')
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
+steps:
+  - name: run this
+  id: step_one
+  run: |
+      echo "Current branch = ${{github.event.base_ref}}"
+  
